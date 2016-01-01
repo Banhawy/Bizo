@@ -25,6 +25,15 @@ function addFriends(event) {
       cell1.innerHTML = email;
       cell2.innerHTML = amount;
 
-      var tableBody = document.getElementById('myTable').getElementsByTagName('td').value;
-      console.log(tableBody);
+      //Looping over the rows to sum up the value of contributions
+      var count = 0;
+      var cells = document.querySelectorAll("td + td");
+      for (var i = 0; i < cells.length; i++) {
+        count += parseFloat(cells[i].firstChild.data);
+        };
+
+      console.log(count);
+
+      //Updating the 'Amount Requested' field
+      document.getElementById('amountRequested').value = count;
 };

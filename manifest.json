@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Bizo",
+  "description": "A Paypal tool to send/recieve money from friends.",
+  "version": "1.0",
+  "icons": {"128": "bizo.png"},
+
+  "browser_action": {
+    "default_icon": "bizo.png",
+    "default_popup": "popup.html",
+    "default_title": "Doos Hena A5awal!"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "cookies",
+    "storage",
+    "https://ajax.googleapis.com/"
+  ]
+
+
+}

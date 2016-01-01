@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Bizo Popup</title>
+
+    <!-- <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">  -->
+  </head>
+  <body>
+
+    <div id="status">Popup UI Goes Here</div>
+    <form class="form-horizontal" id="invite-friends">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Invite Friends</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Email:</label>  
+  <div class="col-md-4">
+  <input id="emailinput" name="emailinput" type="text" required="required" placeholder="Enter Email" class="form-control input-md"> 
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Amount:</label>  
+  <div class="col-md-4">
+  <input id="amountinput" name="amountinput" type="number" placeholder="Amount" min="0.01" max="100" step="0.01" value="0.00" required="required" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Send</button>
+  </div>
+</div>
+</fieldset>
+</form>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  
+  
+    <table class="table table-condensed" id="myTable">
+      
+    </table>
+  <fieldset>
+    <label class="col-md-4 control-label" for="textinput">Amount Requested :</label>
+    <input class="form-control" type="text" id="amountRequested" placeholder="$0.00" readonly>
+    </br>
+    <label class="col-md-4 control-label" for="textinput">Amount Collected :</label>
+    <input class="form-control" type="text" id="amountCollected" placeholder="$0.00" readonly>
+  </fieldset>
+    <img id="image-result" hidden>
+  </body>
+</html>
